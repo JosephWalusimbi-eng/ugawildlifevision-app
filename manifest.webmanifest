@@ -1,6 +1,6 @@
 {
-  "name": "UgaWildlifeVision",
-  "short_name": "WildlifeID",
+  "name": "UgaWildVision",
+  "short_name": "UgaWildVision",
   "description": "Identify Ugandan wildlife from a photo, on your phone and offline.",
   "start_url": "./",
   "scope": "./",

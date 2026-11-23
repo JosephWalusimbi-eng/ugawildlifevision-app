@@ -1,0 +1,5 @@
+{
+  "model_version": "v1_n_seed2 (YOLOv8n-cls, 26 classes, 2026-11-22)",
+  "threshold": 0.7,
+  "threshold_note": "From results/v1/threshold.csv: on the web/park test set, 0.7 answers 94% of photos at 94% accuracy. On UWEC phone photos the model is overconfident (25% accuracy even above 0.9), so the threshold does not make phone answers reliable."
+}

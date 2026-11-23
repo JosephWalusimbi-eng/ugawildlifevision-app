@@ -1,0 +1,51 @@
+:root {
+  --bg: #f6f5f0; --card: #ffffff; --ink: #1b1d1a; --ink2: #555a52; --line: #e2e0d8;
+  --brand: #1f4d2b; --brand-ink: #ffffff; --accent: #2a78d6;
+  --warn-bg: #fff4dc; --warn-ink: #6b4a00; --danger-bg: #fde8e6; --danger-ink: #7a1f17;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #121411; --card: #1c1f1b; --ink: #eceee8; --ink2: #b3b8ad; --line: #30342e;
+    --brand: #2f6b3e; --accent: #5598e7;
+    --warn-bg: #3a2f12; --warn-ink: #f3d58c; --danger-bg: #3d1a17; --danger-ink: #f4b3ab; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg); color: var(--ink); padding-bottom: env(safe-area-inset-bottom); }
+.bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 12px;
+  justify-content: space-between; padding: calc(10px + env(safe-area-inset-top)) 16px 10px;
+  background: var(--brand); color: var(--brand-ink); }
+.bar h1 { font-size: 1.1rem; margin: 0; letter-spacing: .2px; }
+.lang select { font: inherit; font-size: .9rem; padding: 6px 8px; border-radius: 8px; border: 0; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+main { max-width: 560px; margin: 0 auto; padding: 16px; display: grid; gap: 14px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.lead { margin: 0 0 6px; font-size: 1.05rem; }
+.hint { margin: 0; color: var(--ink2); font-size: .92rem; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.btn { display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 10px;
+  border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  font-weight: 600; text-align: center; cursor: pointer; user-select: none; }
+.btn.primary { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
+.btn[aria-disabled="true"] { opacity: .5; pointer-events: none; }
+.btn:focus-within { outline: 3px solid var(--accent); outline-offset: 2px; }
+.status { margin: 0; min-height: 1.4em; color: var(--ink2); text-align: center; font-size: .92rem; }
+.result img { width: 100%; max-height: 50vh; object-fit: contain; border-radius: 10px; background: #0003; }
+.answer { margin-top: 12px; }
+.verdict { margin: 0; font-size: .85rem; text-transform: uppercase; letter-spacing: .6px; color: var(--ink2); }
+.answer h2 { margin: 2px 0 0; font-size: 1.6rem; line-height: 1.2; }
+.sci { margin: 2px 0 0; font-style: italic; color: var(--ink2); }
+.localname { margin: 6px 0 0; font-weight: 600; }
+.localname .tag { font-weight: 400; font-size: .8rem; color: var(--ink2); }
+.meter { margin-top: 12px; height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.meter span { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 4px; transition: width .3s; }
+.conf { margin: 6px 0 0; font-size: .9rem; color: var(--ink2); }
+.warn { margin: 10px 0 0; padding: 8px 10px; border-radius: 8px; background: var(--warn-bg); color: var(--warn-ink); font-size: .9rem; }
+.safety { margin: 10px 0 0; padding: 8px 10px; border-radius: 8px; background: var(--danger-bg); color: var(--danger-ink); font-size: .9rem; font-weight: 600; }
+details summary { cursor: pointer; font-weight: 600; min-height: 32px; }
+#alts { margin-top: 12px; }
+#altlist { margin: 6px 0 0; padding-left: 22px; color: var(--ink2); }
+.facts { margin: 12px 0 0; padding-left: 20px; }
+.facts li { margin-bottom: 4px; }
+.about ul { padding-left: 20px; margin: 8px 0; }
+.small { font-size: .8rem; color: var(--ink2); margin: 0; }

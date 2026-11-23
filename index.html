@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>UgaWildlifeVision</title>
+  <meta name="description" content="Identify Ugandan wildlife from a photo. Runs on your phone; photos never leave the device.">
+  <meta name="theme-color" content="#1f4d2b">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bar">
+    <h1>UgaWildlifeVision</h1>
+    <label class="lang">
+      <span class="sr">Language</span>
+      <select id="lang" aria-label="Language for animal names">
+        <option value="en">English</option>
+        <option value="luganda">Luganda</option>
+        <option value="runyankole">Runyankole</option>
+        <option value="rutooro">Rutooro</option>
+        <option value="ateso">Ateso</option>
+      </select>
+    </label>
+  </header>
+
+  <main>
+    <section id="intro" class="card">
+      <p class="lead">Take a photo of an animal and the app will name the species.</p>
+      <p class="hint">Tip: fill the frame with the animal. Zoom in if it is far away.</p>
+      <p class="warn">Early test version. On 47 real phone photos from UWEC it was right about 1 time in 5
+        (zebra and tiger worked well; chimpanzee, birds, lion and buffalo did not). Treat answers as a guess.</p>
+    </section>
+
+    <section class="actions">
+      <label class="btn primary">
+        <input id="camera" type="file" accept="image/*" capture="environment" hidden>
+        Take a photo
+      </label>
+      <label class="btn">
+        <input id="gallery" type="file" accept="image/*" hidden>
+        Choose from gallery
+      </label>
+    </section>
+
+    <p id="status" class="status" role="status" aria-live="polite">Loading model…</p>
+
+    <section id="result" class="card result" hidden>
+      <img id="preview" alt="Your photo">
+      <div class="answer">
+        <p id="verdict" class="verdict"></p>
+        <h2 id="name"></h2>
+        <p id="sci" class="sci"></p>
+        <p id="localname" class="localname"></p>
+        <div class="meter" aria-hidden="true"><span id="meterfill"></span></div>
+        <p id="conf" class="conf"></p>
+        <p id="lowdata" class="warn" hidden>Few training photos for this animal, so this answer is less reliable.</p>
+        <p id="safety" class="safety" hidden></p>
+      </div>
+      <details id="alts">
+        <summary>Other possibilities</summary>
+        <ol id="altlist"></ol>
+      </details>
+      <ul id="facts" class="facts"></ul>
+    </section>
+
+    <details class="card about">
+      <summary>About this app and its limits</summary>
+      <ul>
+        <li>The model runs on your phone. Your photos are not uploaded anywhere.</li>
+        <li>It knows <span id="ncls">26</span> kinds of animal. Anything else should come out as
+          "Not one of the species I know", but it can still be wrong.</li>
+        <li>Lion, buffalo, cheetah, kudu and hyena had very few training photos. Treat those answers with caution.</li>
+        <li>It names one animal per photo. With several animals, crop or zoom to one.</li>
+        <li>Local-language names are shown only after a native speaker has checked them.</li>
+        <li>A student capstone project (Part 2). Not for safety-critical decisions.</li>
+      </ul>
+      <p class="small" id="version"></p>
+    </details>
+  </main>
+
+  <script src="vendor/ort.wasm.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

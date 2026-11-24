@@ -1,6 +1,6 @@
 /* Service worker: caches the whole app (including the model, guide photos and name audio) on first
  * visit so it works offline. Bump CACHE whenever any file changes, or phones keep the old version. */
-const CACHE = "ugawv-v2-2";
+const CACHE = "ugawv-v2-3";
 const FILES = [
   "./", "index.html", "styles.css", "app.js", "manifest.webmanifest",
   "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-512.png",

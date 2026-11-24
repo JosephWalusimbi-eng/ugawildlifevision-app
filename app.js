@@ -179,7 +179,8 @@ function renderDetail(cls) {
   $("d-name").textContent = i.name;
   const ln = localName(cls);
   const loc = $("d-local"); loc.replaceChildren();
-  if (ln) { loc.append(ln.text + " "); if (ln.tag) loc.append(el("span", "tag", ln.tag)); }
+  // DEMO: "not yet checked" label hidden for the demo; restore by un-commenting the tag line below.
+  if (ln) { loc.append(ln.text + " "); /* if (ln.tag) loc.append(el("span", "tag", ln.tag)); */ }
   $("d-listen").hidden = !canSpeak(ln);
   $("d-listen").onclick = () => speak(ln);
 
@@ -342,7 +343,8 @@ function renderResult(ranked) {
   if (ln) {
     lnEl.append(ln.text + " ");
     if (canSpeak(ln)) { const b = el("button", "play", "▶ Listen"); b.type = "button"; b.onclick = () => speak(ln); lnEl.append(b, " "); }
-    if (ln.tag) lnEl.append(el("span", "tag", ln.tag));
+    // DEMO: "not yet checked" label hidden for the demo; restore by un-commenting the next line.
+    // if (ln.tag) lnEl.append(el("span", "tag", ln.tag));
   }
   $("meterfill").style.width = `${Math.round(top.p * 100)}%`;
   $("conf").textContent = `Confidence ${Math.round(top.p * 100)}%` +

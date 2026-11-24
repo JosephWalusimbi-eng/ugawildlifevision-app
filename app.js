@@ -7,7 +7,7 @@
 const SIZE = 224;
 const $ = (id) => document.getElementById(id);
 const state = { session: null, labels: [], species: {}, catalog: {}, config: { threshold: 0.5 }, last: null,
-                filter: "All", current: null, prevView: "animals" };
+                filter: "All", current: null, inApp: 0, installEvt: null };
 const STATUS_CLASS = { "least concern": "lc", "near threatened": "nt", "vulnerable": "vu", "endangered": "en",
                        "critically endangered": "en" };
 const SWAHILI = "kiswahili";
@@ -60,18 +60,79 @@ function el(tag, cls, text) {
   const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e;
 }
 
-/* ---------------- navigation ---------------- */
+/* ---------------- navigation (hash routes, so the phone's back button works) ----------------
+ *   #home  #animals  #animal/<class>  #identify  #sightings  #help  #about                       */
+const VIEWS = ["home", "animals", "detail", "identify", "sightings", "help", "about"];
+const go = (route) => { if (location.hash !== "#" + route) location.hash = route; else routeNow(); };
+
 function show(view) {
-  for (const v of ["animals", "detail", "identify", "sightings", "about"]) $(`view-${v}`).hidden = v !== view;
-  document.querySelectorAll(".tabs button").forEach((b) =>
-    b.classList.toggle("on", b.dataset.view === view || (view === "detail" && b.dataset.view === state.prevView)));
+  for (const v of VIEWS) $(`view-${v}`).hidden = v !== view;
+  const tab = view === "detail" ? "animals" : view === "about" ? "help" : view;
+  document.querySelectorAll(".tabs button").forEach((b) => {
+    const on = b.dataset.view === tab;
+    b.classList.toggle("on", on);
+    if (on) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
+  });
+  if (view === "home") renderHome();
   if (view === "animals") renderGrid();
   if (view === "sightings") renderSightings();
   window.scrollTo(0, 0);
 }
-document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => {
-  state.prevView = b.dataset.view; show(b.dataset.view);
-}));
+function routeNow() {
+  const h = decodeURIComponent(location.hash.slice(1)) || "home";
+  if (h.startsWith("animal/") && state.species[h.slice(7)]) { renderDetail(h.slice(7)); show("detail"); return; }
+  show(VIEWS.includes(h) && h !== "detail" ? h : "home");
+}
+window.addEventListener("hashchange", () => { state.inApp++; routeNow(); });
+document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => go(b.dataset.view)));
+document.querySelectorAll("[data-go]").forEach((b) => b.addEventListener("click", (e) => { e.preventDefault(); go(b.dataset.go); }));
+const openDetail = (cls) => go("animal/" + cls);
+
+/* ---------------- home ---------------- */
+const LANG_LABEL = () => Object.fromEntries([...$("lang").options].map((o) => [o.value, o.textContent]));
+function renderHome() {
+  if (!animals().length) return;
+  const all = animals();
+  $("h-browse").textContent = `\u{1F43E} Browse ${all.length} animals`;
+  // language chips mirror the header menu
+  const box = $("h-langs"); box.replaceChildren();
+  for (const [v, label] of Object.entries(LANG_LABEL())) {
+    const b = el("button", "chip" + ($("lang").value === v ? " on" : ""), label); b.type = "button";
+    b.addEventListener("click", () => { $("lang").value = v; $("lang").dispatchEvent(new Event("change")); });
+    box.append(b);
+  }
+  // animal of the day: the same animal for everyone on a given date
+  const day = Math.floor(Date.now() / 86400000);
+  const cls = all[day % all.length], i = info(cls), c = cat(cls);
+  const a = $("h-aotd"); a.replaceChildren();
+  if (c.photo) { const img = el("img"); img.src = c.photo.src; img.alt = i.name; a.append(img); }
+  const txt = el("div", "aotd-text");
+  const ln = localName(cls);
+  txt.append(el("p", "eyebrow", "Animal of the day"), el("h3", "", i.name));
+  if (ln && ln.text !== "Translation pending") txt.append(el("p", "local", ln.text));
+  if ((i.facts || []).length) txt.append(el("p", "fact", i.facts[day % i.facts.length]));
+  const more = el("button", "btn small-btn", "Learn more \u203A"); more.type = "button";
+  more.addEventListener("click", () => openDetail(cls));
+  txt.append(more); a.append(txt);
+  // stats
+  const seen = new Set(sightings().map((x) => x.cls)).size;
+  $("h-stat-animals").textContent = all.length;
+  $("h-stat-langs").textContent = Object.keys(LANG_LABEL()).length;
+  $("h-stat-seen").textContent = `${seen}/${all.length}`;
+  // install: native prompt where the browser offers one; once installed, the QR card is for sharing
+  const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+  $("h-install").hidden = !state.installEvt;
+  $("h-qr-title").textContent = standalone ? "Share with a friend" : "Get it on your phone";
+}
+$("h-identify").addEventListener("click", () => go("identify"));
+$("h-browse").addEventListener("click", () => go("animals"));
+$("h-sightings").addEventListener("click", () => go("sightings"));
+window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); state.installEvt = e; if (!$("view-home").hidden) renderHome(); });
+$("h-install").addEventListener("click", async () => {
+  if (!state.installEvt) return;
+  state.installEvt.prompt(); await state.installEvt.userChoice; state.installEvt = null; renderHome();
+});
+window.addEventListener("appinstalled", () => toast("UgaWildVision installed"));
 
 /* ---------------- animals grid ---------------- */
 function renderChips() {
@@ -107,7 +168,7 @@ function renderGrid() {
 $("search").addEventListener("input", renderGrid);
 
 /* ---------------- detail ---------------- */
-function openDetail(cls) {
+function renderDetail(cls) {
   state.current = cls;
   const i = info(cls), c = cat(cls);
   if (c.photo) {
@@ -141,15 +202,15 @@ function openDetail(cls) {
   for (const f of i.facts || []) facts.append(el("li", "", f));
   $("d-facts").hidden = $("d-facts-h").hidden = !(i.facts || []).length;
   $("d-wiki").href = c.wikipedia || "#";
-  show("detail");
 }
-$("d-back").addEventListener("click", () => show(state.prevView || "animals"));
+// Back returns to wherever the user came from; a shared link opened directly goes to the list.
+$("d-back").addEventListener("click", () => { if (state.inApp > 0) history.back(); else go("animals"); });
 function sawIt(cls) {
   const s = sightings(); s.unshift({ cls, t: Date.now() });
   localStorage.setItem("sightings", JSON.stringify(s));
   toast(`Recorded: ${info(cls).name}`);
 }
-$("d-saw").addEventListener("click", () => { sawIt(state.current); openDetail(state.current); });
+$("d-saw").addEventListener("click", () => { sawIt(state.current); renderDetail(state.current); });
 
 /* ---------------- sightings ---------------- */
 function renderSightings() {
@@ -171,7 +232,7 @@ function renderSightings() {
     if (c.photo) { const img = el("img"); img.src = c.photo.src; img.alt = ""; li.append(img); }
     const d = el("div"); d.append(el("div", "", info(x.cls).name),
       el("div", "when", new Date(x.t).toLocaleString()));
-    li.append(d); li.addEventListener("click", () => { state.prevView = "sightings"; openDetail(x.cls); });
+    li.append(d); li.addEventListener("click", () => openDetail(x.cls));
     list.append(li);
   }
 }
@@ -183,7 +244,7 @@ async function init() {
       loadJSON("model/labels.json"), loadJSON("model/species.json"), loadJSON("model/config.json"),
       loadJSON("model/catalog.json"),
     ]);
-    renderChips(); renderGrid(); renderCredits();
+    renderChips(); renderCredits(); routeNow();
     $("ncls").textContent = state.labels.filter((c) => c !== "other").length;
     state.session = await ort.InferenceSession.create("model/model.onnx", { executionProviders: ["wasm"] });
     $("version").textContent = `Model ${state.config.model_version || "?"} · threshold ${state.config.threshold}`;
@@ -289,7 +350,7 @@ function renderResult(ranked) {
   $("lowdata").hidden = !i.low_data;
   $("safety").hidden = !i.safety; $("safety").textContent = i.safety || "";
   $("r-open").hidden = $("r-saw").hidden = unknown;
-  $("r-open").onclick = () => { state.prevView = "identify"; openDetail(top.cls); };
+  $("r-open").onclick = () => openDetail(top.cls);
   $("r-saw").onclick = () => sawIt(top.cls);
   const alt = $("altlist"); alt.replaceChildren();
   for (const r of ranked.slice(1, 4)) alt.append(el("li", "", `${info(r.cls).name}: ${Math.round(r.p * 100)}%`));
@@ -302,7 +363,8 @@ for (const id of ["camera", "gallery"]) {
 $("lang").addEventListener("change", () => {
   localStorage.setItem("lang", $("lang").value);
   renderGrid(); renderResult(state.last);
-  if (!$("view-detail").hidden && state.current) openDetail(state.current);
+  if (!$("view-detail").hidden && state.current) renderDetail(state.current);
+  if (!$("view-home").hidden) renderHome();
 });
 $("lang").value = localStorage.getItem("lang") || "en";
 

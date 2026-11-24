@@ -13,7 +13,7 @@
 </head>
 <body>
   <header class="top">
-    <div class="brand"><span class="logo" aria-hidden="true">&#x1F43E;</span> UgaWildVision</div>
+    <a class="brand" href="#home" aria-label="UgaWildVision home"><span class="logo" aria-hidden="true">&#x1F43E;</span> UgaWildVision</a>
     <label class="lang">
       <span class="sr">Language</span>
       <select id="lang" aria-label="Language for animal names">
@@ -34,8 +34,50 @@
     </label>
   </header>
 
+  <!-- HOME -->
+  <main id="view-home" class="view home">
+    <section class="hero">
+      <img src="images/lion.jpg" alt="" class="hero-bg">
+      <div class="hero-text">
+        <p class="eyebrow light">Uganda's wildlife in your pocket</p>
+        <h1>Discover the animals you see</h1>
+        <p>Take a photo to learn an animal's name, facts and safety tips, in your language, even with no network.</p>
+        <div class="cta">
+          <button id="h-identify" class="btn primary big" type="button">&#x1F4F7; Identify an animal</button>
+          <button id="h-browse" class="btn big light" type="button">&#x1F43E; Browse animals</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3 class="sec0">Choose your language</h3>
+      <div id="h-langs" class="chips wrap" role="group" aria-label="Language"></div>
+    </section>
+
+    <section id="h-aotd" class="card aotd"></section>
+
+    <section class="stats3">
+      <div class="stat"><b id="h-stat-animals">25</b><span>animals</span></div>
+      <div class="stat"><b id="h-stat-langs">9</b><span>languages</span></div>
+      <button id="h-sightings" class="stat" type="button"><b id="h-stat-seen">0/25</b><span>seen by you</span></button>
+    </section>
+
+    <section class="card qr-card">
+      <div>
+        <h3 class="sec0" id="h-qr-title">Get it on your phone</h3>
+        <p>Scan the code with your phone's camera, then add the app to your home screen. It works offline after the first visit.</p>
+        <button id="h-install" class="btn primary" type="button" hidden>&#x2B07;&#xFE0F; Install app</button>
+        <p class="small"><a href="install.html">Printable install page</a> &middot; <a href="#help" data-go="help">How to use</a></p>
+      </div>
+      <img src="icons/qr.png" alt="QR code that opens UgaWildVision" width="150" height="150">
+    </section>
+
+    <p class="small center">Accuracy on real phone photos is about 1 in 5 so far: use a close, clear photo, and check the answer.
+      <a href="#about" data-go="about">About this app</a></p>
+  </main>
+
   <!-- ANIMALS -->
-  <main id="view-animals" class="view">
+  <main id="view-animals" class="view" hidden>
     <h1 class="title">Animals</h1>
     <div class="search"><span aria-hidden="true">&#x1F50D;</span>
       <input id="search" type="search" placeholder="Search" aria-label="Search animals"></div>
@@ -114,6 +156,25 @@
     <p class="small">Sightings are stored only on this phone.</p>
   </main>
 
+  <!-- HOW TO USE -->
+  <main id="view-help" class="view" hidden>
+    <h1 class="title">How to use this app</h1>
+    <ol class="steps">
+      <li><span class="n">1</span><div><b>Choose your language</b><p>Pick a language on the Home page or in the menu at the top. Animal names are then shown, and can be heard, in that language.</p></div></li>
+      <li><span class="n">2</span><div><b>Identify an animal</b><p>Tap the orange camera button. Take a photo, or choose one from your gallery. Fill the frame with one animal and zoom in if it is far away. The app names the animal in under a second, on your phone.</p></div></li>
+      <li><span class="n">3</span><div><b>Check the answer</b><p>A confidence bar shows how sure the app is. If it says "Not sure", try a closer, clearer photo. "Other possibilities" lists the next best guesses.</p></div></li>
+      <li><span class="n">4</span><div><b>Learn about it</b><p>Tap "Open in guide" for photos, facts, its conservation status, a safety note and its name in other languages. Tap Listen to hear the name.</p></div></li>
+      <li><span class="n">5</span><div><b>Browse the guide</b><p>The Animals tab lists every animal. Search by name in any language, or filter by group: mammals, birds, reptiles, amphibians or fish.</p></div></li>
+      <li><span class="n">6</span><div><b>Record your sightings</b><p>Tap "I saw it!" on an animal's page. The Sightings tab shows what you have seen and how many animals are left to find. Sightings stay on your phone.</p></div></li>
+      <li><span class="n">7</span><div><b>Use it offline</b><p>Open the app once with internet, then add it to your home screen (Android: menu &#8942; &rarr; Install app; iPhone: Share &rarr; Add to Home Screen). After that it works without a network.</p></div></li>
+    </ol>
+    <section class="card tips">
+      <h3 class="sec0">&#x26A0;&#xFE0F; Stay safe</h3>
+      <p>Never approach wild animals to take a photo. Stay behind fences and follow your guide. The app is a learning aid, not a safety device.</p>
+    </section>
+    <p class="small center"><a href="#about" data-go="about">About this app, its limits and photo credits</a></p>
+  </main>
+
   <!-- ABOUT -->
   <main id="view-about" class="view" hidden>
     <h1 class="title">About</h1>
@@ -134,10 +195,11 @@
   </main>
 
   <nav class="tabs" aria-label="Sections">
-    <button data-view="animals" class="on"><span>&#x1F43E;</span>Animals</button>
-    <button data-view="identify" class="cam" aria-label="Identify with camera"><span>&#x1F4F7;</span></button>
-    <button data-view="sightings"><span>&#x1F4CB;</span>Sightings</button>
-    <button data-view="about"><span>&#x2139;&#xFE0F;</span>About</button>
+    <button data-view="home" class="on" type="button"><span>&#x1F3E0;</span>Home</button>
+    <button data-view="animals" type="button"><span>&#x1F43E;</span>Animals</button>
+    <button data-view="identify" class="cam" type="button" aria-label="Identify an animal with the camera"><span>&#x1F4F7;</span></button>
+    <button data-view="sightings" type="button"><span>&#x1F4CB;</span>Sightings</button>
+    <button data-view="help" type="button"><span>&#x2753;</span>How to use</button>
   </nav>
 
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>

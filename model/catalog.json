@@ -1,0 +1,377 @@
+{
+ "uganda_kob": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Kob",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Artiodactyla",
+  "family": "Bovidae",
+  "status": "least concern",
+  "photo": {
+   "src": "images/uganda_kob.jpg",
+   "author": "Fanny Schertzer",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Male_Ugandan_kob_-_Queen_Elizabeth_National_Park,_Uganda_(4).jpg"
+  }
+ },
+ "bird": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Bird",
+  "category": "Birds",
+  "class": "Aves",
+  "order": "",
+  "family": "",
+  "status": "",
+  "photo": {
+   "src": "images/bird.jpg",
+   "author": "C. Robiller / naturlichter.de (Hyla meridionalis)",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Kleiber_Flug.jpg"
+  }
+ },
+ "chimpanzee": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Chimpanzee",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Primates",
+  "family": "Hominidae",
+  "status": "endangered",
+  "photo": {
+   "src": "images/chimpanzee.jpg",
+   "author": "Giles Laurent",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:015_Chimpanzee_at_Kibale_forest_National_Park_Photo_by_Giles_Laurent.jpg"
+  }
+ },
+ "elephant": {
+  "wikipedia": "https://en.wikipedia.org/wiki/African_bush_elephant",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Proboscidea",
+  "family": "Elephantidae",
+  "status": "endangered",
+  "photo": {
+   "src": "images/elephant.jpg",
+   "author": "Giles Laurent",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:178_Male_African_bush_elephant_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg"
+  }
+ },
+ "gorilla": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Mountain_gorilla",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Primates",
+  "family": "Hominidae",
+  "status": "endangered",
+  "photo": {
+   "src": "images/gorilla.jpg",
+   "author": "https://www.flickr.com/photos/deepphoto/ d_proffer",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Susa_group,_mountain_gorilla.jpg"
+  }
+ },
+ "hippo": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Hippopotamus",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Artiodactyla",
+  "family": "Hippopotamidae",
+  "status": "vulnerable",
+  "photo": {
+   "src": "images/hippo.jpg",
+   "author": "Muhammad Mahdi Karim",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Portrait_Hippopotamus_in_the_water.jpg"
+  }
+ },
+ "warthog": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Common_warthog",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Artiodactyla",
+  "family": "Suidae",
+  "status": "least concern",
+  "photo": {
+   "src": "images/warthog.jpg",
+   "author": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Southern_warthog_(Phacochoerus_africanus_sundevallii)_male.jpg"
+  }
+ },
+ "tiger": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Tiger",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Carnivora",
+  "family": "Felidae",
+  "status": "endangered",
+  "photo": {
+   "src": "images/tiger.jpg",
+   "author": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Bengal_tiger_(Panthera_tigris_tigris)_female_3_crop.jpg"
+  }
+ },
+ "leopard": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Leopard",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Carnivora",
+  "family": "Felidae",
+  "status": "vulnerable",
+  "photo": {
+   "src": "images/leopard.jpg",
+   "author": "Sumeet Moghe",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:African_leopard_male_(cropped).jpg"
+  }
+ },
+ "fox": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Fox",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Carnivora",
+  "family": "Canidae",
+  "status": "",
+  "photo": {
+   "src": "images/fox.jpg",
+   "author": "Joanne Redwood",
+   "licence": "CC0",
+   "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://commons.wikimedia.org/wiki/File:Vulpes_vulpes_ssp_fulvus.jpg"
+  }
+ },
+ "frog": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Frog",
+  "category": "Amphibians",
+  "class": "Amphibia",
+  "order": "Anura",
+  "family": "",
+  "status": "",
+  "photo": {
+   "src": "images/frog.jpg",
+   "author": "Charlie Jackson",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Red-eyed_Leaf_Frog_(49661076226).jpg"
+  }
+ },
+ "snake": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Snake",
+  "category": "Reptiles",
+  "class": "Reptilia",
+  "order": "Squamata",
+  "family": "",
+  "status": "",
+  "photo": {
+   "src": "images/snake.jpg",
+   "author": "Rushenb",
+   "licence": "CC BY-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Trimeresurus_sabahi_fucatus,_Banded_pit_viper_-_Takua_Pa_District,_Phang-nga_Province_(46710893582).jpg"
+  }
+ },
+ "fish": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Fish",
+  "category": "Fish",
+  "class": "Pisces",
+  "order": "",
+  "family": "",
+  "status": "",
+  "photo": {
+   "src": "images/fish.jpg",
+   "author": "H. Zell",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Balantiocheilos_melanopterus_-_Karlsruhe_Zoo_02_(cropped).jpg"
+  }
+ },
+ "zebra": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Plains_zebra",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Perissodactyla",
+  "family": "Equidae",
+  "status": "near threatened",
+  "photo": {
+   "src": "images/zebra.jpg",
+   "author": "Yathin S Krishnappa",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Equus_quagga_burchellii_-_Etosha,_2014.jpg"
+  }
+ },
+ "monkey": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Vervet_monkey",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Primates",
+  "family": "Cercopithecidae",
+  "status": "least concern",
+  "photo": {
+   "src": "images/monkey.jpg",
+   "author": "Diego Delso",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Cercopiteco_verde_(Chlorocebus_pygerythrus),_parque_nacional_del_lago_Nakuru,_Kenia,_2024-05-18,_DD_77.jpg"
+  }
+ },
+ "crocodile": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Nile_crocodile",
+  "category": "Reptiles",
+  "class": "Reptilia",
+  "order": "Crocodilia",
+  "family": "Crocodylidae",
+  "status": "least concern",
+  "photo": {
+   "src": "images/crocodile.jpg",
+   "author": "Dewet",
+   "licence": "CC BY-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:NileCrocodile.jpg"
+  }
+ },
+ "tortoise": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Tortoise",
+  "category": "Reptiles",
+  "class": "Reptilia",
+  "order": "Testudines",
+  "family": "Testudinidae",
+  "status": "",
+  "photo": {
+   "src": "images/tortoise.jpg",
+   "author": "Childzy at en.wikipedia",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:A._gigantea_Aldabra_Giant_Tortoise.jpg"
+  }
+ },
+ "giraffe": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Rothschild's_giraffe",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Artiodactyla",
+  "family": "Giraffidae",
+  "status": "near threatened",
+  "photo": {
+   "src": "images/giraffe.jpg",
+   "author": "Bernard DUPONT from FRANCE",
+   "licence": "CC BY-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Rothschild%27s_Giraffe_(Giraffa_camelopardalis_rothschildi)_male_(7068054987),_crop_%26_edit.jpg"
+  }
+ },
+ "rhino": {
+  "wikipedia": "https://en.wikipedia.org/wiki/White_rhinoceros",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Perissodactyla",
+  "family": "Rhinocerotidae",
+  "status": "near threatened",
+  "photo": {
+   "src": "images/rhino.jpg",
+   "author": "Giles Laurent",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:109_Male_White_rhinoceros_walking_in_the_Kalahari_Desert_of_Namibia_Photo_by_Giles_Laurent.jpg"
+  }
+ },
+ "squirrel": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Squirrel",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Rodentia",
+  "family": "Sciuridae",
+  "status": "",
+  "photo": {
+   "src": "images/squirrel.jpg",
+   "author": "Chicoutimi (montage)\n\n\nKarakal\nAndiW\nNational Park Service\nen:User:Markus Krötzsch\nThe Lilac Breasted Roller\nNico Conrad",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Sciuridae.jpg"
+  }
+ },
+ "lion": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Lion",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Carnivora",
+  "family": "Felidae",
+  "status": "vulnerable",
+  "photo": {
+   "src": "images/lion.jpg",
+   "author": "Giles Laurent",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg"
+  }
+ },
+ "buffalo": {
+  "wikipedia": "https://en.wikipedia.org/wiki/African_buffalo",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Artiodactyla",
+  "family": "Bovidae",
+  "status": "near threatened",
+  "photo": {
+   "src": "images/buffalo.jpg",
+   "author": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:African_buffalo_(Syncerus_caffer_caffer)_male_with_cattle_egret.jpg"
+  }
+ },
+ "cheetah": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Cheetah",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Carnivora",
+  "family": "Felidae",
+  "status": "vulnerable",
+  "photo": {
+   "src": "images/cheetah.jpg",
+   "author": "AfricanConservation",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Male_cheetah_facing_left_in_South_Africa.jpg"
+  }
+ },
+ "kudu": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Greater_kudu",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Artiodactyla",
+  "family": "Bovidae",
+  "status": "least concern",
+  "photo": {
+   "src": "images/kudu.jpg",
+   "author": "L0k1m0nk33 at English Wikipedia",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Male_greater_kudu.jpg"
+  }
+ },
+ "hyena": {
+  "wikipedia": "https://en.wikipedia.org/wiki/Spotted_hyena",
+  "category": "Mammals",
+  "class": "Mammalia",
+  "order": "Carnivora",
+  "family": "Hyaenidae",
+  "status": "least concern",
+  "photo": {
+   "src": "images/hyena.jpg",
+   "author": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Spotted_hyena_(Crocuta_crocuta).jpg"
+  }
+ }
+}

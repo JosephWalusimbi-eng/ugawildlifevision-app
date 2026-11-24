@@ -1,4 +1,4 @@
-/* UgaWildlifeVision PWA - on-device species classifier.
+/* UgaWildVision PWA - pocket field guide + on-device species classifier.
  * Preprocessing must match scripts/export_cls.py PREPROCESS exactly:
  *   EXIF-rotate -> RGB -> shorter side to 224 -> centre-crop 224x224 -> /255 -> NCHW float32.
  * Model output = softmax probabilities [1, nClasses]; class order = model/labels.json.
@@ -6,7 +6,11 @@
 "use strict";
 const SIZE = 224;
 const $ = (id) => document.getElementById(id);
-const state = { session: null, labels: [], species: {}, config: { threshold: 0.5 }, last: null };
+const state = { session: null, labels: [], species: {}, catalog: {}, config: { threshold: 0.5 }, last: null,
+                filter: "All", current: null, prevView: "animals" };
+const STATUS_CLASS = { "least concern": "lc", "near threatened": "nt", "vulnerable": "vu", "endangered": "en",
+                       "critically endangered": "en" };
+const SWAHILI = "kiswahili";
 
 // absolute URL: ORT loads its .mjs with import(), which rejects bare relative specifiers
 ort.env.wasm.wasmPaths = new URL("vendor/", location.href).href;
@@ -18,25 +22,192 @@ async function loadJSON(url) {
   return r.json();
 }
 
+/* ---------------- data helpers ---------------- */
+const animals = () => Object.keys(state.species).filter((c) => c !== "other");
+const info = (cls) => state.species[cls] || { name: cls };
+const cat = (cls) => state.catalog[cls] || {};
+const sightings = () => JSON.parse(localStorage.getItem("sightings") || "[]");
+const seenCount = (cls) => sightings().filter((s) => s.cls === cls).length;
+
+function nameIn(cls, lang) {
+  const l = (info(cls).local || {})[lang];
+  if (!l || !l.text) return null;
+  const ok = l.verified || !l.auto_check || l.auto_check.startsWith("pass");
+  if (!ok) return null;
+  return { text: l.text, audio: l.audio || "", tts: l.tts || "",
+           tag: l.verified ? "checked by a speaker"
+                : (l.source || "").startsWith("Sunbird") ? "machine translation, not yet checked" : "not yet checked" };
+}
+function localName(cls) {
+  const lang = $("lang").value;
+  if (lang === "en") return null;
+  return nameIn(cls, lang) || { text: "Translation pending", tag: "" };
+}
+function speak(ln) {
+  if (ln.audio) { new Audio(ln.audio).play().catch(() => {}); return; }
+  if (ln.tts && "speechSynthesis" in window) {
+    const u = new SpeechSynthesisUtterance(ln.text); u.lang = ln.tts;   // phone's own voice
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+  }
+}
+const canSpeak = (ln) => ln && (ln.audio || (ln.tts && "speechSynthesis" in window));
+
+function toast(t) {
+  const el = $("toast"); el.textContent = t; el.hidden = false;
+  clearTimeout(toast.t); toast.t = setTimeout(() => { el.hidden = true; }, 1800);
+}
+function el(tag, cls, text) {
+  const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e;
+}
+
+/* ---------------- navigation ---------------- */
+function show(view) {
+  for (const v of ["animals", "detail", "identify", "sightings", "about"]) $(`view-${v}`).hidden = v !== view;
+  document.querySelectorAll(".tabs button").forEach((b) =>
+    b.classList.toggle("on", b.dataset.view === view || (view === "detail" && b.dataset.view === state.prevView)));
+  if (view === "animals") renderGrid();
+  if (view === "sightings") renderSightings();
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => {
+  state.prevView = b.dataset.view; show(b.dataset.view);
+}));
+
+/* ---------------- animals grid ---------------- */
+function renderChips() {
+  const groups = ["All", ...new Set(animals().map((c) => cat(c).category || "Mammals"))];
+  const box = $("chips"); box.replaceChildren();
+  for (const g of groups) {
+    const b = el("button", "chip" + (g === state.filter ? " on" : ""), g);
+    b.addEventListener("click", () => { state.filter = g; renderChips(); renderGrid(); });
+    box.append(b);
+  }
+}
+function renderGrid() {
+  const q = $("search").value.trim().toLowerCase();
+  const lang = $("lang").value;
+  const grid = $("grid"); grid.replaceChildren();
+  for (const cls of animals()) {
+    const i = info(cls), c = cat(cls);
+    if (state.filter !== "All" && (c.category || "Mammals") !== state.filter) continue;
+    const ln = lang === "en" ? null : nameIn(cls, lang);
+    const hay = [i.name, i.scientific, ln && ln.text].join(" ").toLowerCase();
+    if (q && !hay.includes(q)) continue;
+    const card = el("button", "cardA"); card.type = "button";
+    const ph = el("div", "ph");
+    if (c.photo) { const img = el("img"); img.src = c.photo.src; img.alt = i.name; img.loading = "lazy"; ph.append(img); }
+    ph.append(el("span", "cat", c.category || "Mammals"));
+    const n = seenCount(cls);
+    card.append(ph, el("div", "nm", i.name), el("div", "ln", ln ? ln.text : ""),
+                el("span", "seen", n ? `\u{1F441} Seen ${n} time${n > 1 ? "s" : ""}` : "Not seen yet"));
+    card.addEventListener("click", () => openDetail(cls));
+    grid.append(card);
+  }
+}
+$("search").addEventListener("input", renderGrid);
+
+/* ---------------- detail ---------------- */
+function openDetail(cls) {
+  state.current = cls;
+  const i = info(cls), c = cat(cls);
+  if (c.photo) {
+    $("d-photo").src = c.photo.src; $("d-photo").alt = i.name;
+    $("d-credit").textContent = `Photo: ${c.photo.author || "unknown"}, ${c.photo.licence}`;
+    $("d-credit").href = c.photo.page || "#";
+  } else { $("d-photo").removeAttribute("src"); $("d-credit").textContent = ""; }
+  $("d-name").textContent = i.name;
+  const ln = localName(cls);
+  const loc = $("d-local"); loc.replaceChildren();
+  if (ln) { loc.append(ln.text + " "); if (ln.tag) loc.append(el("span", "tag", ln.tag)); }
+  $("d-listen").hidden = !canSpeak(ln);
+  $("d-listen").onclick = () => speak(ln);
+
+  const tags = $("d-tags"); tags.replaceChildren();
+  tags.append(el("span", "tag cat", c.category || "Mammals"));
+  if (c.status) tags.append(el("span", `tag ${STATUS_CLASS[c.status.toLowerCase()] || ""}`, `IUCN: ${c.status}`));
+  if (i.safety) tags.append(el("span", "tag danger", "Keep your distance"));
+  if (i.low_data) tags.append(el("span", "tag low", "Few training photos"));
+  const n = seenCount(cls);
+  tags.append(el("span", "tag seen", n ? `Seen ${n} time${n > 1 ? "s" : ""}` : "Not seen yet"));
+  $("d-safety").hidden = !i.safety; $("d-safety").textContent = i.safety ? `⚠️ ${i.safety}` : "";
+
+  const sw = nameIn(cls, SWAHILI);
+  const rows = [["Latin name", i.scientific], ["Swahili name", sw ? sw.text : ""], ["Class", c.class],
+                ["Order", c.order], ["Family", c.family]];
+  const tax = $("d-tax"); tax.replaceChildren();
+  for (const [k, v] of rows) { if (!v) continue; tax.append(el("dt", "", k), el("dd", "", v)); }
+
+  const facts = $("d-facts"); facts.replaceChildren();
+  for (const f of i.facts || []) facts.append(el("li", "", f));
+  $("d-facts").hidden = $("d-facts-h").hidden = !(i.facts || []).length;
+  $("d-wiki").href = c.wikipedia || "#";
+  show("detail");
+}
+$("d-back").addEventListener("click", () => show(state.prevView || "animals"));
+function sawIt(cls) {
+  const s = sightings(); s.unshift({ cls, t: Date.now() });
+  localStorage.setItem("sightings", JSON.stringify(s));
+  toast(`Recorded: ${info(cls).name}`);
+}
+$("d-saw").addEventListener("click", () => { sawIt(state.current); openDetail(state.current); });
+
+/* ---------------- sightings ---------------- */
+function renderSightings() {
+  const s = sightings(), all = animals();
+  const got = new Set(s.map((x) => x.cls));
+  $("s-count").textContent = got.size; $("s-total").textContent = all.length;
+  $("s-fill").style.width = `${Math.round(100 * got.size / all.length)}%`;
+  const badges = $("s-badges"); badges.replaceChildren();
+  const groups = [...new Set(all.map((c) => cat(c).category || "Mammals"))];
+  for (const g of groups) {
+    const members = all.filter((c) => (cat(c).category || "Mammals") === g);
+    const n = members.filter((c) => got.has(c)).length;
+    badges.append(el("span", "badge" + (n === members.length ? " got" : ""), `${g}: ${n}/${members.length}`));
+  }
+  const list = $("s-list"); list.replaceChildren();
+  $("s-empty").hidden = s.length > 0;
+  for (const x of s) {
+    const li = el("li"); const c = cat(x.cls);
+    if (c.photo) { const img = el("img"); img.src = c.photo.src; img.alt = ""; li.append(img); }
+    const d = el("div"); d.append(el("div", "", info(x.cls).name),
+      el("div", "when", new Date(x.t).toLocaleString()));
+    li.append(d); li.addEventListener("click", () => { state.prevView = "sightings"; openDetail(x.cls); });
+    list.append(li);
+  }
+}
+
+/* ---------------- identify (model) ---------------- */
 async function init() {
   try {
-    [state.labels, state.species, state.config] = await Promise.all([
+    [state.labels, state.species, state.config, state.catalog] = await Promise.all([
       loadJSON("model/labels.json"), loadJSON("model/species.json"), loadJSON("model/config.json"),
+      loadJSON("model/catalog.json"),
     ]);
-    state.session = await ort.InferenceSession.create("model/model.onnx", { executionProviders: ["wasm"] });
+    renderChips(); renderGrid(); renderCredits();
     $("ncls").textContent = state.labels.filter((c) => c !== "other").length;
+    state.session = await ort.InferenceSession.create("model/model.onnx", { executionProviders: ["wasm"] });
     $("version").textContent = `Model ${state.config.model_version || "?"} · threshold ${state.config.threshold}`;
     setStatus("Ready. Take or choose a photo.");
     setBusy(false);
   } catch (e) {
-    setStatus(`Could not load the model (${e.message}). Check your connection and reload once.`);
+    setStatus(`Could not load the app data (${e.message}). Check your connection and reload once.`);
     console.error(e);
+  }
+}
+function renderCredits() {
+  const ul = $("credits"); ul.replaceChildren();
+  for (const cls of animals()) {
+    const p = cat(cls).photo; if (!p) continue;
+    const li = el("li"); li.append(`${info(cls).name}: ${p.author || "unknown"}, `);
+    const a = el("a", "", p.licence); a.href = p.licence_url || p.page; a.target = "_blank"; a.rel = "noopener";
+    const s = el("a", "", "source"); s.href = p.page; s.target = "_blank"; s.rel = "noopener";
+    li.append(a, " (Wikimedia Commons, ", s, ")"); ul.append(li);
   }
 }
 
 function setStatus(t) { $("status").textContent = t; }
 function setBusy(b) {
-  document.querySelectorAll(".btn").forEach((el) => el.setAttribute("aria-disabled", String(b)));
+  document.querySelectorAll(".actions .btn").forEach((e) => e.setAttribute("aria-disabled", String(b)));
 }
 
 /* Decode with EXIF orientation applied, then resize + centre crop with EXACTLY the geometry of
@@ -86,7 +257,7 @@ async function classify(file) {
     const probs = Array.from(out[state.session.outputNames[0]].data);
     const ranked = probs.map((p, i) => ({ cls: state.labels[i], p })).sort((a, b) => b.p - a.p);
     state.last = ranked;
-    render(ranked);
+    renderResult(ranked);
     setStatus(`Done in ${Math.round(ms)} ms on this device.`);
   } catch (e) {
     setStatus(`Something went wrong: ${e.message}`);
@@ -96,53 +267,43 @@ async function classify(file) {
   }
 }
 
-function localName(info) {
-  const lang = $("lang").value;
-  if (lang === "en" || !info.local) return null;
-  const l = info.local[lang];
-  if (!l || !l.text) return { text: "Translation pending", tag: "" };
-  return { text: l.text, tag: l.verified ? "checked by a speaker" : "unverified" };
-}
-
-function render(ranked) {
+function renderResult(ranked) {
   if (!ranked) return;
-  const top = ranked[0], info = state.species[top.cls] || { name: top.cls };
+  const top = ranked[0], i = info(top.cls);
   const sure = top.p >= state.config.threshold;
   const unknown = top.cls === "other";
   $("result").hidden = false;
   $("verdict").textContent = unknown ? "Result" : sure ? "Most likely" : "Not sure, best guess";
-  $("name").textContent = info.name;
-  $("sci").textContent = info.scientific || "";
-  const ln = unknown ? null : localName(info);
-  const lnEl = $("localname");
-  lnEl.hidden = !ln;
+  $("name").textContent = i.name;
+  $("sci").textContent = i.scientific || "";
+  const ln = unknown ? null : localName(top.cls);
+  const lnEl = $("localname"); lnEl.replaceChildren(); lnEl.hidden = !ln;
   if (ln) {
-    lnEl.textContent = ln.text + " ";
-    if (ln.tag) { const s = document.createElement("span"); s.className = "tag"; s.textContent = `(${ln.tag})`; lnEl.append(s); }
+    lnEl.append(ln.text + " ");
+    if (canSpeak(ln)) { const b = el("button", "play", "▶ Listen"); b.type = "button"; b.onclick = () => speak(ln); lnEl.append(b, " "); }
+    if (ln.tag) lnEl.append(el("span", "tag", ln.tag));
   }
   $("meterfill").style.width = `${Math.round(top.p * 100)}%`;
   $("conf").textContent = `Confidence ${Math.round(top.p * 100)}%` +
     (sure ? "" : `, below the ${Math.round(state.config.threshold * 100)}% needed to be sure. Try a closer, clearer photo.`);
-  $("lowdata").hidden = !info.low_data;
-  $("safety").hidden = !info.safety;
-  $("safety").textContent = info.safety || "";
+  $("lowdata").hidden = !i.low_data;
+  $("safety").hidden = !i.safety; $("safety").textContent = i.safety || "";
+  $("r-open").hidden = $("r-saw").hidden = unknown;
+  $("r-open").onclick = () => { state.prevView = "identify"; openDetail(top.cls); };
+  $("r-saw").onclick = () => sawIt(top.cls);
   const alt = $("altlist"); alt.replaceChildren();
-  for (const r of ranked.slice(1, 4)) {
-    const li = document.createElement("li");
-    li.textContent = `${(state.species[r.cls] || { name: r.cls }).name}: ${Math.round(r.p * 100)}%`;
-    alt.append(li);
-  }
-  const facts = $("facts"); facts.replaceChildren();
-  for (const f of (sure && !unknown ? info.facts || [] : [])) {
-    const li = document.createElement("li"); li.textContent = f; facts.append(li);
-  }
+  for (const r of ranked.slice(1, 4)) alt.append(el("li", "", `${info(r.cls).name}: ${Math.round(r.p * 100)}%`));
   $("result").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 for (const id of ["camera", "gallery"]) {
   $(id).addEventListener("change", (e) => { classify(e.target.files[0]); e.target.value = ""; });
 }
-$("lang").addEventListener("change", () => { localStorage.setItem("lang", $("lang").value); render(state.last); });
+$("lang").addEventListener("change", () => {
+  localStorage.setItem("lang", $("lang").value);
+  renderGrid(); renderResult(state.last);
+  if (!$("view-detail").hidden && state.current) openDetail(state.current);
+});
 $("lang").value = localStorage.getItem("lang") || "en";
 
 if ("serviceWorker" in navigator) {

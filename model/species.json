@@ -11,20 +11,68 @@
   ],
   "local": {
    "luganda": {
-    "text": "",
-    "verified": false
+    "text": "Uganda kobye",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Uganda has been",
+    "audio": ""
    },
    "runyankole": {
-    "text": "",
-    "verified": false
+    "text": "Uganda teine intaneeti",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Uganda has no internet",
+    "audio": ""
    },
    "rutooro": {
-    "text": "",
-    "verified": false
+    "text": "Uganda neeha?",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "What does Uganda offer?",
+    "audio": ""
    },
    "ateso": {
-    "text": "",
-    "verified": false
+    "text": "Uganda kobu",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Uganda has come",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Uganda kob",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Uganda is a beautiful country",
+    "audio": ""
+   },
+   "french": {
+    "text": "Cobe de Buffon",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Kob",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Kob",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
    }
   }
  },
@@ -40,20 +88,68 @@
   ],
   "local": {
    "luganda": {
-    "text": "",
-    "verified": false
+    "text": "Ekinyonyi",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The bird",
+    "audio": "model/audio/bird_luganda.wav"
    },
    "runyankole": {
-    "text": "",
-    "verified": false
+    "text": "Ekinyonyi",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Birds",
+    "audio": "model/audio/bird_runyankole.wav"
    },
    "rutooro": {
-    "text": "",
-    "verified": false
+    "text": "Ekinyonyi",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The bird",
+    "audio": ""
    },
    "ateso": {
-    "text": "",
-    "verified": false
+    "text": "Awenan",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The prisoners",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Ndege",
+    "verified": false,
+    "auto_check": "pass (matches Wikipedia article title)",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "A plane",
+    "audio": "model/audio/bird_kiswahili.wav"
+   },
+   "french": {
+    "text": "Oiseau",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Vogel",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Vogel",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
    }
   }
  },
@@ -69,20 +165,68 @@
   ],
   "local": {
    "luganda": {
-    "text": "",
-    "verified": false
+    "text": "Enkima",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The monkey",
+    "audio": ""
    },
    "runyankole": {
-    "text": "",
-    "verified": false
+    "text": "Chimpanzee",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Chimpanzee",
+    "audio": ""
    },
    "rutooro": {
-    "text": "",
-    "verified": false
+    "text": "Chimpanzee",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Chimpanzee",
+    "audio": ""
    },
    "ateso": {
-    "text": "",
-    "verified": false
+    "text": "Chimpanzee",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Chimpanzee",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Nyani mweusi",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Black monkey",
+    "audio": ""
+   },
+   "french": {
+    "text": "Chimpanzé",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Schimpanse",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Chimpansee",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
    }
   }
  },
@@ -98,20 +242,68 @@
   ],
   "local": {
    "luganda": {
-    "text": "",
-    "verified": false
+    "text": "Enjovu ey'omu Afirika",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "African elephant",
+    "audio": "model/audio/elephant_luganda.wav"
    },
    "runyankole": {
-    "text": "",
-    "verified": false
+    "text": "Enjovu ya Afirika",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "African elephant",
+    "audio": "model/audio/elephant_runyankole.wav"
    },
    "rutooro": {
-    "text": "",
-    "verified": false
+    "text": "Enjangu ya Africa",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "African leopard",
+    "audio": ""
    },
    "ateso": {
-    "text": "",
-    "verified": false
+    "text": "Elefanta loka Africa",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "African elephant",
+    "audio": "model/audio/elephant_ateso.wav"
+   },
+   "kiswahili": {
+    "text": "Ndovu wa Afrika",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "African elephant",
+    "audio": "model/audio/elephant_kiswahili.wav"
+   },
+   "french": {
+    "text": "Éléphant d'Afrique",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Afrikanischer Elefant",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Afrikaanse olifant",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
    }
   }
  },
@@ -127,20 +319,68 @@
   ],
   "local": {
    "luganda": {
-    "text": "",
-    "verified": false
+    "text": "Gorilla",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Gorilla",
+    "audio": ""
    },
    "runyankole": {
-    "text": "",
-    "verified": false
+    "text": "Gorilla",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Gorilla",
+    "audio": ""
    },
    "rutooro": {
-    "text": "",
-    "verified": false
+    "text": "Gorilla",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Gorilla",
+    "audio": ""
    },
    "ateso": {
-    "text": "",
-    "verified": false
+    "text": "Gorilla",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Gorilla",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Gorila",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Gorilla",
+    "audio": "model/audio/gorilla_kiswahili.wav"
+   },
+   "french": {
+    "text": "Gorille",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Gorilla",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Gorilla",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
    }
   }
  },
@@ -156,20 +396,68 @@
   ],
   "local": {
    "luganda": {
-    "text": "",
-    "verified": false
+    "text": "Enkula (hippopotamus)",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Hippopotamus (hippopotamus)",
+    "audio": "model/audio/hippo_luganda.wav"
    },
    "runyankole": {
-    "text": "",
-    "verified": false
+    "text": "Enjoka y'omu maizi",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Sea snake",
+    "audio": ""
    },
    "rutooro": {
-    "text": "",
-    "verified": false
+    "text": "Hippopotamus",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Hippopotamus",
+    "audio": ""
    },
    "ateso": {
-    "text": "",
-    "verified": false
+    "text": "Hippopotamus",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Hippopotamus",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Kiboko",
+    "verified": false,
+    "auto_check": "pass (matches Wikipedia article title)",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The whip",
+    "audio": "model/audio/hippo_kiswahili.wav"
+   },
+   "french": {
+    "text": "Hippopotame",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Flusspferd",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Nijlpaard",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
    }
   }
  },
@@ -185,20 +473,68 @@
   ],
   "local": {
    "luganda": {
-    "text": "",
-    "verified": false
+    "text": "Entulege ey'omu ttale",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Wild ass",
+    "audio": ""
    },
    "runyankole": {
-    "text": "",
-    "verified": false
+    "text": "Ente y'omusiri",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Field goat",
+    "audio": ""
    },
    "rutooro": {
-    "text": "",
-    "verified": false
+    "text": "Ente y'omu kisaka",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Wild cow",
+    "audio": ""
    },
    "ateso": {
-    "text": "",
-    "verified": false
+    "text": "Warthog erai etunganan loepol noi loka Africa",
+    "verified": false,
+    "auto_check": "fail: a sentence, not a name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The warthog is the largest wild pig in Africa",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Ngiri",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "thousand",
+    "audio": ""
+   },
+   "french": {
+    "text": "Phacochère",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Warzenschwein",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Knobbelzwijn",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
    }
   }
  },
@@ -207,144 +543,1387 @@
   "scientific": "Panthera tigris",
   "safety": "Dangerous big cat.",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Tigers are the largest of all cat species.",
+   "No two tigers have the same stripe pattern.",
+   "Tigers come from Asia and do not live wild in Africa; in Uganda they are seen at UWEC in Entebbe.",
+   "Unlike most cats, tigers like water and are strong swimmers."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Ttiiga",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Tiger",
+    "audio": "model/audio/tiger_luganda.wav"
+   },
+   "runyankole": {
+    "text": "Tiger",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Tiger",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Tiger",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Tiger",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Ekingok loemwaka",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "A barking dog",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Simba",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Lion",
+    "audio": ""
+   },
+   "french": {
+    "text": "Tigre",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Tiger",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Tijger",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "leopard": {
   "name": "Leopard",
   "scientific": "Panthera pardus",
   "safety": "Dangerous big cat.",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Leopards live in many of Uganda's national parks, including Queen Elizabeth and Murchison Falls.",
+   "A leopard often carries its prey up into a tree to keep it away from lions and hyenas.",
+   "Leopards are mostly active at night and are very hard to spot by day."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Empologoma",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The lion",
+    "audio": ""
+   },
+   "runyankole": {
+    "text": "Ekibwe",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The rock",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Ekikere",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The frog",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Leopard",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Leopard",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Chui",
+    "verified": false,
+    "auto_check": "pass (matches Wikipedia article title)",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Leopard",
+    "audio": "model/audio/leopard_kiswahili.wav"
+   },
+   "french": {
+    "text": "Léopard",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Leopard",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Luipaard",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "fox": {
   "name": "Fox",
   "scientific": "Vulpes and related genera",
   "safety": "",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Foxes belong to the dog family.",
+   "Their large ears help them hear small animals moving underground.",
+   "Foxes usually hunt alone rather than in packs."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Enkoko",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Chicken",
+    "audio": ""
+   },
+   "runyankole": {
+    "text": "Fox",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Fox",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Fox",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Fox",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Fox",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Fox",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Mbweha",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The hyena",
+    "audio": ""
+   },
+   "french": {
+    "text": "Renard",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Fuchs",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Vos",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "frog": {
   "name": "Frog or toad",
   "scientific": "Anura (many species)",
   "safety": "",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Frogs start life as tadpoles that live in water and breathe with gills.",
+   "Many frogs can take in oxygen through their skin.",
+   "The frog calls heard at night are mostly males calling to attract females."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Ekikere oba akanyonyi",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "A frog or a bird",
+    "audio": "model/audio/frog_luganda.wav"
+   },
+   "runyankole": {
+    "text": "Ekikere nainga ekitooro",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "A frog or toad",
+    "audio": "model/audio/frog_runyankole.wav"
+   },
+   "rutooro": {
+    "text": "Ekikere rundi ekitooro",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "A frog or a toad",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Ekuruk arai bo toad",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "A frog or toad",
+    "audio": "model/audio/frog_ateso.wav"
+   },
+   "kiswahili": {
+    "text": "Chura au todi",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Chura or todi",
+    "audio": ""
+   },
+   "french": {
+    "text": "Grenouille",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Frosch",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Kikker",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "snake": {
   "name": "Snake",
   "scientific": "Serpentes (cobras, pythons, vipers)",
   "safety": "Do not approach: some snakes are venomous.",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Snakes have no eyelids and no external ears.",
+   "A snake flicks its tongue to collect scents from the air.",
+   "Uganda is home to pythons, cobras and vipers; the African rock python is Africa's largest snake."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Omusota",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Snake",
+    "audio": "model/audio/snake_luganda.wav"
+   },
+   "runyankole": {
+    "text": "Enjoka",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Snake",
+    "audio": "model/audio/snake_runyankole.wav"
+   },
+   "rutooro": {
+    "text": "Enjoka",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Snake",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Ejok",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Good",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Nyoka",
+    "verified": false,
+    "auto_check": "pass (matches Wikipedia article title)",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Snake",
+    "audio": "model/audio/snake_kiswahili.wav"
+   },
+   "french": {
+    "text": "Serpent",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Schlange",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Slang",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "fish": {
   "name": "Fish",
   "scientific": "many species",
   "safety": "",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Uganda shares Lake Victoria, Africa's largest lake, with Kenya and Tanzania.",
+   "Tilapia and Nile perch are important food fish in Uganda.",
+   "Fish breathe by taking oxygen from water through their gills."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Ebyennyanja",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Fisheries",
+    "audio": "model/audio/fish_luganda.wav"
+   },
+   "runyankole": {
+    "text": "Ebyenyanja",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Fisheries",
+    "audio": "model/audio/fish_runyankole.wav"
+   },
+   "rutooro": {
+    "text": "Ebyenyanja",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Fisheries",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Agaria",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Fishermen",
+    "audio": "model/audio/fish_ateso.wav"
+   },
+   "kiswahili": {
+    "text": "Samaki",
+    "verified": false,
+    "auto_check": "pass (matches Wikipedia article title)",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Fish",
+    "audio": "model/audio/fish_kiswahili.wav"
+   },
+   "french": {
+    "text": "Poisson",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Fisch",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Vis",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "zebra": {
   "name": "Zebra",
   "scientific": "Equus quagga",
   "safety": "",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Every zebra has its own unique stripe pattern.",
+   "In Uganda, zebras can be seen in Lake Mburo and Kidepo Valley National Parks.",
+   "Zebras live in family groups and often graze together with other grazing animals."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Zebra",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Zebra",
+    "audio": ""
+   },
+   "runyankole": {
+    "text": "Zebra",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Zebra",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Zebra",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Zebra",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Ejaasi Zebra keda aiboisio nuegelegela nuka akwap",
+    "verified": false,
+    "auto_check": "fail: a sentence, not a name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Zebras have different habitats in the wild",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Punda milia",
+    "verified": false,
+    "auto_check": "pass (matches Wikipedia article title)",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "zebra",
+    "audio": "model/audio/zebra_kiswahili.wav"
+   },
+   "french": {
+    "text": "Zèbre",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Zebra",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Zebra",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "monkey": {
   "name": "Monkey",
   "scientific": "Cercopithecidae (many species)",
   "safety": "",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Uganda has a great variety of primates; Kibale Forest alone has 13 primate species.",
+   "Monkeys have tails, which is one way to tell them apart from apes such as chimpanzees and gorillas.",
+   "Vervet monkeys use different alarm calls for different predators."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Enkima",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The monkey",
+    "audio": "model/audio/monkey_luganda.wav"
+   },
+   "runyankole": {
+    "text": "Enkima",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The monkey",
+    "audio": "model/audio/monkey_runyankole.wav"
+   },
+   "rutooro": {
+    "text": "Enkima",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Chimpanzee",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Emukule",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The barkcloth",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Nyani",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Monkey",
+    "audio": "model/audio/monkey_kiswahili.wav"
+   },
+   "french": {
+    "text": "Singe",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Affe",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Aap",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "crocodile": {
   "name": "Crocodile",
   "scientific": "Crocodylus niloticus (Nile crocodile)",
   "safety": "Dangerous: stay away from the water's edge.",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "The Nile crocodile is one of Africa's largest reptiles.",
+   "Many crocodiles can be seen along the Nile in Murchison Falls National Park.",
+   "Mother crocodiles carry their newly hatched young to the water in their mouths."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Ggonya",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Ggonya",
+    "audio": ""
+   },
+   "runyankole": {
+    "text": "Ekikere",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The frog",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Ekikere",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The frog",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Ekwam",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The air",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Mamba",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Alligator",
+    "audio": ""
+   },
+   "french": {
+    "text": "Crocodile du Nil",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Nilkrokodil",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Nijlkrokodil",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "tortoise": {
   "name": "Tortoise",
   "scientific": "Testudinidae",
   "safety": "",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Some tortoises live for more than 100 years.",
+   "A tortoise's shell is part of its skeleton and cannot be taken off.",
+   "Tortoises live on land, while most turtles live in water."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Akasaale",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "A spear",
+    "audio": ""
+   },
+   "runyankole": {
+    "text": "Enkobe",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The leopard",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Enkobe",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The gorilla",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Etapit ekingok alosit motimot",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The dog moves slowly",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Kobe",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Kobe",
+    "audio": ""
+   },
+   "french": {
+    "text": "Tortue",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Landschildkröte",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Landschildpad",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "giraffe": {
   "name": "Giraffe",
   "scientific": "Giraffa camelopardalis",
   "safety": "",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "The giraffe is the tallest land animal.",
+   "Uganda's giraffes are Rothschild's (Nubian) giraffes, found in Murchison Falls, Kidepo Valley and Lake Mburo.",
+   "A giraffe's long neck has the same number of bones (seven) as a human neck."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Enkula",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The structure",
+    "audio": ""
+   },
+   "runyankole": {
+    "text": "Enjoka",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Snake",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Ente y'omusiri",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "A field cow",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Ejai Giraffe",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "There is a Giraffe",
+    "audio": "model/audio/giraffe_ateso.wav"
+   },
+   "kiswahili": {
+    "text": "Twiga",
+    "verified": false,
+    "auto_check": "pass (matches Wikipedia article title)",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The elephant",
+    "audio": "model/audio/giraffe_kiswahili.wav"
+   },
+   "french": {
+    "text": "Girafe",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Giraffe",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Giraf",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "rhino": {
   "name": "Rhinoceros",
   "scientific": "Ceratotherium simum / Diceros bicornis",
   "safety": "Dangerous: keep a wide distance.",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Rhinos had disappeared from the wild in Uganda by the early 1980s.",
+   "They have been brought back at Ziwa Rhino Sanctuary, where they are protected and breeding.",
+   "A rhino's horn is made of keratin, the same material as human fingernails."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Enkula eyitibwa Rhinoceros",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The animal is called the Rhinoceros",
+    "audio": "model/audio/rhino_luganda.wav"
+   },
+   "runyankole": {
+    "text": "Rhinoceros",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Rhinoceros",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Rhinoceros",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Rhinoceros",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Rhinoceros",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Rhinoceros",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Kifaru",
+    "verified": false,
+    "auto_check": "pass (matches Wikipedia article title)",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The Rhino",
+    "audio": "model/audio/rhino_kiswahili.wav"
+   },
+   "french": {
+    "text": "Rhinocéros",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Nashorn",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Neushoorn",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "squirrel": {
   "name": "Squirrel",
   "scientific": "Sciuridae (many species)",
   "safety": "",
   "low_data": false,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Squirrels use their bushy tails for balance when climbing and jumping.",
+   "Many squirrels bury food to eat later.",
+   "Africa has both tree squirrels and ground squirrels."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Ekikere",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "A frog",
+    "audio": ""
+   },
+   "runyankole": {
+    "text": "Squirrels",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Squirrels",
+    "audio": "model/audio/squirrel_runyankole.wav"
+   },
+   "rutooro": {
+    "text": "Squirrel",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Squirrel",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Ejai squirrel",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "There is a squirrel",
+    "audio": "model/audio/squirrel_ateso.wav"
+   },
+   "kiswahili": {
+    "text": "Panya wa msituni",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Forest mice",
+    "audio": ""
+   },
+   "french": {
+    "text": "Écureuil",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Eichhörnchen",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Eekhoorn",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "lion": {
   "name": "Lion",
   "scientific": "Panthera leo",
   "safety": "Dangerous big cat.",
   "low_data": true,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "The Ishasha sector of Queen Elizabeth National Park is famous for lions that climb and rest in trees.",
+   "Lions are the only cats that live in groups, called prides.",
+   "A lion's roar can be heard several kilometres away."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Empologoma",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The lion",
+    "audio": "model/audio/lion_luganda.wav"
+   },
+   "runyankole": {
+    "text": "Entare",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The lion",
+    "audio": "model/audio/lion_runyankole.wav"
+   },
+   "rutooro": {
+    "text": "Entale",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The war",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Ekingok",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Dog",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Simba",
+    "verified": false,
+    "auto_check": "pass (matches Wikipedia article title)",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Lion",
+    "audio": "model/audio/lion_kiswahili.wav"
+   },
+   "french": {
+    "text": "Lion",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Löwe",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Leeuw",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "buffalo": {
   "name": "African buffalo",
   "scientific": "Syncerus caffer",
   "safety": "Dangerous: keep a wide distance.",
   "low_data": true,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "African buffaloes live in large herds that protect their young together.",
+   "They are considered one of the most dangerous animals in Africa, especially lone males.",
+   "Buffaloes are common in Queen Elizabeth and Murchison Falls National Parks."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Enjaza y'omu Afirika",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "African fish eagle",
+    "audio": "model/audio/buffalo_luganda.wav"
+   },
+   "runyankole": {
+    "text": "Enyamaishwa y'omwirungu",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Wild animal",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Ente y'omu kisaka",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Wild animal",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "African buffalo",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "African buffalo",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Nyati wa Afrika",
+    "verified": false,
+    "auto_check": "pass (matches Wikipedia article title)",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "African buffalo",
+    "audio": "model/audio/buffalo_kiswahili.wav"
+   },
+   "french": {
+    "text": "Buffle d'Afrique",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Kaffernbüffel",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Kafferbuffel",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "cheetah": {
   "name": "Cheetah",
   "scientific": "Acinonyx jubatus",
   "safety": "Wild big cat.",
   "low_data": true,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "The cheetah is the fastest land animal, reaching about 100 km/h in short sprints.",
+   "In Uganda, cheetahs are found mainly in Kidepo Valley National Park.",
+   "Cheetahs cannot roar; they chirp, purr and growl instead."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Cheetah kye kiwuka ekirya ennyama",
+    "verified": false,
+    "auto_check": "fail: a sentence, not a name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "A cheetah is a carnivorous animal",
+    "audio": ""
+   },
+   "runyankole": {
+    "text": "Cheetah",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Cheetah",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Cheetah",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Cheetah",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Cheetah",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Cheetah",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Chui",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Leopard",
+    "audio": ""
+   },
+   "french": {
+    "text": "Guépard",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Gepard",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Jachtluipaard",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "kudu": {
   "name": "Kudu",
   "scientific": "Tragelaphus spp.",
   "safety": "",
   "low_data": true,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Male kudus have long spiral horns; only the males carry horns.",
+   "The thin white stripes on a kudu's body help it hide in bushes.",
+   "Kudus mostly eat leaves and shoots rather than grass."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Kudu kye ki?",
+    "verified": false,
+    "auto_check": "pass",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "What is kudu?",
+    "audio": "model/audio/kudu_luganda.wav"
+   },
+   "runyankole": {
+    "text": "Kudu",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "South",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Kudu",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Kudu",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Kide",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "East",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Kudu ni mji wa Kenya katika Kaunti ya Kisii",
+    "verified": false,
+    "auto_check": "fail: a sentence, not a name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Kudu is a town in Kenya in Kisii County",
+    "audio": ""
+   },
+   "french": {
+    "text": "Koudou",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Kudu",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Koedoe",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "hyena": {
   "name": "Hyena",
   "scientific": "Hyaenidae (e.g. Crocuta crocuta)",
   "safety": "Wild animal: keep your distance.",
   "low_data": true,
-  "facts": [],
-  "local": {}
+  "facts": [
+   "Spotted hyenas live in groups called clans, which are led by females.",
+   "Hyenas hunt much of their own food; they do not only scavenge.",
+   "The hyena's famous 'laugh' is a call it makes when excited or stressed."
+  ],
+  "local": {
+   "luganda": {
+    "text": "Empologoma",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "The lion",
+    "audio": ""
+   },
+   "runyankole": {
+    "text": "Enyamaishwa",
+    "verified": false,
+    "auto_check": "fail: back-translation names another thing",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Animals",
+    "audio": ""
+   },
+   "rutooro": {
+    "text": "Hyena",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Hyena",
+    "audio": ""
+   },
+   "ateso": {
+    "text": "Hyena",
+    "verified": false,
+    "auto_check": "fail: returned the English name",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Hyena",
+    "audio": ""
+   },
+   "kiswahili": {
+    "text": "Fisi",
+    "verified": false,
+    "auto_check": "pass (matches Wikipedia article title)",
+    "source": "Sunbird AI (machine translation)",
+    "back_translation": "Hyena",
+    "audio": "model/audio/hyena_kiswahili.wav"
+   },
+   "french": {
+    "text": "Hyène",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "fr-FR"
+   },
+   "german": {
+    "text": "Hyäne",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "de-DE"
+   },
+   "dutch": {
+    "text": "Hyena",
+    "verified": false,
+    "source": "Common name (checked against Wikipedia)",
+    "auto_check": "pass",
+    "audio": "",
+    "tts": "nl-NL"
+   }
+  }
  },
  "other": {
   "name": "Not one of the species I know",

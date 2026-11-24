@@ -4,80 +4,143 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>UgaWildVision</title>
-  <meta name="description" content="Identify Ugandan wildlife from a photo. Runs on your phone; photos never leave the device.">
-  <meta name="theme-color" content="#1f4d2b">
+  <meta name="description" content="A pocket field guide to Ugandan wildlife. Identify animals from a photo, offline; photos never leave the device.">
+  <meta name="theme-color" content="#f7f1e6">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon-192.png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="bar">
-    <h1>UgaWildVision</h1>
+  <header class="top">
+    <div class="brand"><span class="logo" aria-hidden="true">&#x1F43E;</span> UgaWildVision</div>
     <label class="lang">
       <span class="sr">Language</span>
       <select id="lang" aria-label="Language for animal names">
         <option value="en">English</option>
-        <option value="luganda">Luganda</option>
-        <option value="runyankole">Runyankole</option>
-        <option value="rutooro">Rutooro</option>
-        <option value="ateso">Ateso</option>
+        <optgroup label="Ugandan languages">
+          <option value="luganda">Luganda</option>
+          <option value="runyankole">Runyankole</option>
+          <option value="rutooro">Rutooro</option>
+          <option value="ateso">Ateso</option>
+        </optgroup>
+        <optgroup label="Visitor languages">
+          <option value="kiswahili">Kiswahili</option>
+          <option value="french">Fran&ccedil;ais</option>
+          <option value="german">Deutsch</option>
+          <option value="dutch">Nederlands</option>
+        </optgroup>
       </select>
     </label>
   </header>
 
-  <main>
-    <section id="intro" class="card">
+  <!-- ANIMALS -->
+  <main id="view-animals" class="view">
+    <h1 class="title">Animals</h1>
+    <div class="search"><span aria-hidden="true">&#x1F50D;</span>
+      <input id="search" type="search" placeholder="Search" aria-label="Search animals"></div>
+    <div id="chips" class="chips" role="group" aria-label="Filter by group"></div>
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <!-- DETAIL -->
+  <main id="view-detail" class="view detail" hidden>
+    <div class="hero">
+      <img id="d-photo" alt="">
+      <button class="back" id="d-back" aria-label="Back">&#x2039;</button>
+      <a id="d-credit" class="credit" target="_blank" rel="noopener"></a>
+    </div>
+    <section class="sheet">
+      <div class="d-head">
+        <div>
+          <h2 id="d-name"></h2>
+          <p id="d-local" class="local"></p>
+        </div>
+        <button id="d-listen" class="sound" hidden aria-label="Listen to the name"><span>&#x1F50A;</span><small>Listen</small></button>
+      </div>
+      <div id="d-tags" class="tags"></div>
+      <p id="d-safety" class="safety" hidden></p>
+      <h3 class="sec">&#x1F4D8; Taxonomy information</h3>
+      <dl id="d-tax" class="tax"></dl>
+      <h3 class="sec" id="d-facts-h">&#x1F4A1; Did you know?</h3>
+      <ul id="d-facts" class="facts"></ul>
+      <p class="small">Read more on <a id="d-wiki" target="_blank" rel="noopener">Wikipedia</a>.</p>
+      <div class="spacer"></div>
+    </section>
+    <button id="d-saw" class="saw">&#x1F441; I saw it!</button>
+  </main>
+
+  <!-- IDENTIFY -->
+  <main id="view-identify" class="view" hidden>
+    <h1 class="title">Identify an animal</h1>
+    <section class="card intro">
       <p class="lead">Take a photo of an animal and the app will name the species.</p>
-      <p class="hint">Tip: fill the frame with the animal. Zoom in if it is far away.</p>
+      <p class="hint">Fill the frame with one animal; zoom in if it is far away.</p>
       <p class="warn">Accuracy on real phone photos so far is about 1 in 5. Works best on a close, clear photo.</p>
     </section>
-
     <section class="actions">
-      <label class="btn primary">
-        <input id="camera" type="file" accept="image/*" capture="environment" hidden>
-        Take a photo
-      </label>
-      <label class="btn">
-        <input id="gallery" type="file" accept="image/*" hidden>
-        Choose from gallery
-      </label>
+      <label class="btn primary"><input id="camera" type="file" accept="image/*" capture="environment" hidden>&#x1F4F7; Take a photo</label>
+      <label class="btn"><input id="gallery" type="file" accept="image/*" hidden>&#x1F5BC; Choose from gallery</label>
     </section>
-
-    <p id="status" class="status" role="status" aria-live="polite">Loading model…</p>
-
+    <p id="status" class="status" role="status" aria-live="polite">Loading model&hellip;</p>
     <section id="result" class="card result" hidden>
       <img id="preview" alt="Your photo">
-      <div class="answer">
-        <p id="verdict" class="verdict"></p>
-        <h2 id="name"></h2>
-        <p id="sci" class="sci"></p>
-        <p id="localname" class="localname"></p>
-        <div class="meter" aria-hidden="true"><span id="meterfill"></span></div>
-        <p id="conf" class="conf"></p>
-        <p id="lowdata" class="warn" hidden>Few training photos for this animal, so this answer is less reliable.</p>
-        <p id="safety" class="safety" hidden></p>
+      <p id="verdict" class="verdict"></p>
+      <h2 id="name"></h2>
+      <p id="sci" class="sci"></p>
+      <p id="localname" class="local"></p>
+      <div class="meter" aria-hidden="true"><span id="meterfill"></span></div>
+      <p id="conf" class="conf"></p>
+      <p id="lowdata" class="warn" hidden>Few training photos for this animal, so this answer is less reliable.</p>
+      <p id="safety" class="safety" hidden></p>
+      <div class="row">
+        <button id="r-open" class="btn primary">Open in guide</button>
+        <button id="r-saw" class="btn">&#x1F441; I saw it!</button>
       </div>
-      <details id="alts">
-        <summary>Other possibilities</summary>
-        <ol id="altlist"></ol>
-      </details>
-      <ul id="facts" class="facts"></ul>
+      <details id="alts"><summary>Other possibilities</summary><ol id="altlist"></ol></details>
     </section>
-
-    <details class="card about">
-      <summary>About this app and its limits</summary>
-      <ul>
-        <li>The model runs on your phone. Your photos are not uploaded anywhere.</li>
-        <li>It knows <span id="ncls">26</span> kinds of animal. Anything else should come out as
-          "Not one of the species I know", but it can still be wrong.</li>
-        <li>Lion, buffalo, cheetah, kudu and hyena had very few training photos. Treat those answers with caution.</li>
-        <li>It names one animal per photo. With several animals, crop or zoom to one.</li>
-        <li>Local-language names are shown only after a native speaker has checked them.</li>
-      </ul>
-      <p class="small" id="version"></p>
-    </details>
   </main>
+
+  <!-- SIGHTINGS -->
+  <main id="view-sightings" class="view" hidden>
+    <h1 class="title">My sightings</h1>
+    <section class="card progress">
+      <p><b id="s-count">0</b> of <b id="s-total">25</b> animals seen</p>
+      <div class="meter"><span id="s-fill"></span></div>
+      <div id="s-badges" class="badges"></div>
+    </section>
+    <ul id="s-list" class="slist"></ul>
+    <p id="s-empty" class="hint">No sightings yet. Open an animal and tap <b>I saw it!</b>, or identify one with the camera.</p>
+    <p class="small">Sightings are stored only on this phone.</p>
+  </main>
+
+  <!-- ABOUT -->
+  <main id="view-about" class="view" hidden>
+    <h1 class="title">About</h1>
+    <section class="card">
+      <ul class="plain">
+        <li>A pocket field guide to Ugandan wildlife. It works offline; the model runs on your phone and your photos are not uploaded anywhere.</li>
+        <li>It knows <span id="ncls">25</span> kinds of animal. Anything else should come out as "Not one of the species I know", but it can still be wrong.</li>
+        <li>Lion, buffalo, cheetah, kudu and hyena had very few training photos. Treat those answers with caution.</li>
+        <li>Ugandan-language and Kiswahili names and audio come from Sunbird AI machine translation and speech; French, German and Dutch names are common names spoken by your phone's own voice. All are marked "not yet checked" until a native speaker confirms them.</li>
+      </ul>
+    </section>
+    <section class="card share">
+      <p><b>Share this app</b>: scan the code, or open <a href="install.html">the install page</a>.</p>
+      <img src="icons/qr.png" alt="QR code linking to UgaWildVision" width="180" height="180">
+    </section>
+    <details class="card"><summary>Photo credits</summary><ul id="credits" class="credits"></ul></details>
+    <p class="small" id="version"></p>
+  </main>
+
+  <nav class="tabs" aria-label="Sections">
+    <button data-view="animals" class="on"><span>&#x1F43E;</span>Animals</button>
+    <button data-view="identify" class="cam" aria-label="Identify with camera"><span>&#x1F4F7;</span></button>
+    <button data-view="sightings"><span>&#x1F4CB;</span>Sightings</button>
+    <button data-view="about"><span>&#x2139;&#xFE0F;</span>About</button>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
   <script src="vendor/ort.wasm.min.js"></script>
   <script src="app.js"></script>
